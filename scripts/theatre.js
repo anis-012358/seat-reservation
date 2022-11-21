@@ -16,7 +16,6 @@ export class Theatre {
         this.seats = seatsData.map(seat => new Seat(seat.nr, seat.row, seat.tier));
         this.freeSeats = structuredClone(this.seats);
         this.reserveSeatsRandomly();
-        
     }
 
     /**
@@ -43,7 +42,8 @@ export class Theatre {
             let randomValue =  this.getRandomInt(0, this.freeSeats.length-1);
             this.freeSeats.splice(randomValue,1);
         }
-        console.log(this.freeSeats);
+        console.log('The free seats are:')
+        console.log(this.freeSeats , '\n');
     }
     
     /**

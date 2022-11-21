@@ -1,0 +1,6 @@
+****************************How to run?****************************
+
+Go the seatReservation folder
+Open a terminal/console
+Run: node scripts/index.js <number_of_reserved_seats> <number_of_visitors>
+      ex. node scripts/index.js 27 3

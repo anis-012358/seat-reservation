@@ -44,7 +44,7 @@ export class SeatReservationAlgoritm {
                     this.bestSeats = this.makeItBest(this.freeSeats.slice(from, to));
                     break;
                 case constant.Comparation.SAME :
-                    if (!this.isFartherfromTheStage(this.freeSeats[from], this.bestSeats[0]) && this.isMoreInTheMiddle(this.freeSeats[from].nr, this.bestSeats[0].nr)) {
+                    if (!this.isFartherfromTheStage(this.freeSeats[from], this.bestSeats.bestSeats[0]) && this.isMoreInTheMiddle(this.freeSeats[from].nr, this.bestSeats.bestSeats[0].nr)) {
                         this.bestSeats = this.makeItBest(this.freeSeats.slice(from, to));
                         break;
                     }
@@ -93,7 +93,7 @@ export class SeatReservationAlgoritm {
      */
     makeItBest(currentSeats) {
         return {
-            ...currentSeats,
+            bestSeats : [...currentSeats],
             priceCategory : this.sumPrice(currentSeats)
         }
     }
